@@ -16,6 +16,9 @@ function getAndPrintHTML () {
     response.on('data',function (chunk) {
 
       buffer += chunk;
+    });
+    response.on('end', function() {
+      console.log('Response stream complete.');
       console.log(buffer);
     });
   });

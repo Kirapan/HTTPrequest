@@ -10,8 +10,10 @@ function getAndPrintHTML (options) {
     response.on('data',function (chunk) {
 
       buffer += chunk;
-      console.log(buffer);
     });
+    response.on('end', function() {
+      console.log(buffer);
+    })
   });
 }
 
